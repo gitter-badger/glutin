@@ -34,6 +34,8 @@ use x11 as winimpl;
 use osx as winimpl;
 #[cfg(target_os = "android")]
 use android as winimpl;
+#[cfg(target_os = "emscripten")]
+use emscripten as winimpl;
 
 #[cfg(target_os = "windows")]
 mod win32;
@@ -43,6 +45,8 @@ mod x11;
 mod osx;
 #[cfg(target_os = "android")]
 mod android;
+#[cfg(target_os = "emscripten")]
+mod emscripten;
 
 mod events;
 
